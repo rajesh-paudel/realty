@@ -14,7 +14,7 @@ export default function Hero() {
     if (!trimmedCity) return;
 
     const citySlug = trimmedCity.toLowerCase().replace(/\s+/g, "-");
-    router.push(`/city/${citySlug}`);
+    router.push(`city/${citySlug}`);
   };
 
   return (

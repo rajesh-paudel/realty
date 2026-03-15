@@ -9,9 +9,9 @@ export default function Navbar() {
 
   return (
     <header className="w-full bg-white border-b border-gray-100">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex w-full items-center justify-between px-3 sm:px-8 py-4">
         <Link href="/" className="flex items-center gap-3">
-          <img src="/logo.png" alt="Realty logo" className="h-10 w-auto" />
+          <img src="/logo.png" alt="Realty logo" className="h-12 w-auto" />
         </Link>
         <div className="flex items-center gap-4">
           <ul className="hidden items-center gap-7 text-base font-semibold text-gray-700 md:flex">
@@ -75,9 +75,9 @@ export default function Navbar() {
             <li>
               <Link
                 className="transition-colors hover:text-blue-600"
-                href="#testimonials"
+                href="/listings-in-sudbury"
               >
-                Testimonials
+                Listings
               </Link>
             </li>
             <li>

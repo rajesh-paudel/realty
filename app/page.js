@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import { fetchMedia, fetchProperties } from "@/lib/api";
 import { cityToSlug } from "@/lib/slug";
 import Slider from "@/components/Slider";
+import Testimonials from "@/components/Testimonials";
 export default async function Home() {
   const Types = [
     "Detached",
@@ -63,6 +64,7 @@ export default async function Home() {
           totalCount={section.totalCount}
         />
       ))}
+      <Testimonials />
     </main>
   );
 }

@@ -1,14 +1,57 @@
-export default function CityPage({ params }) {
-  const cityName = params.city.replace(/-/g, " ");
+import CityComponent from "@/components/CityComponent";
+import { fetchProperties, fetchMedia } from "@/lib/api";
+import { slugToCity } from "@/lib/slug";
+
+export default async function CityPage({ params, searchParams }) {
+  const { city } = await params;
+
+  const sParams = await searchParams;
+
+  const currentPage = Number(sParams.page) || 1;
+  const limit = 20;
+  const skip = (currentPage - 1) * limit;
+
+  const beds = sParams.beds ? Number(sParams.beds) : undefined;
+  const baths = sParams.baths ? Number(sParams.baths) : undefined;
+  const homeType = sParams.homeType || undefined;
+  const minPrice = sParams.minPrice ? Number(sParams.minPrice) : undefined;
+  const maxPrice = sParams.maxPrice
+    ? Number(sParams.maxPrice)
+    : sParams.priceMax
+      ? Number(sParams.priceMax)
+      : undefined;
+  const listingType = sParams.listingType || "sale";
+  const sort = sParams.sort || "newest";
+  const cityToPass = slugToCity(city);
+  const data = await fetchProperties({
+    cityToPass,
+    top: limit,
+    skip,
+    beds,
+    baths,
+    homeType,
+    minPrice,
+    maxPrice,
+    listingType,
+    sort,
+  });
+  const itemsWithMedia = await Promise.all(
+    (data.items || []).map(async (property) => {
+      const media = await fetchMedia(property.ListingKey, 1);
+
+      return { ...property, Media: media };
+    }),
+  );
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-16">
-      <h1 className="text-3xl font-semibold text-slate-900">
-        Listings in {cityName}
-      </h1>
-      <p className="mt-3 text-base text-slate-600">
-        Results will appear here for {cityName}.
-      </p>
-    </main>
+    <CityComponent
+      city={city}
+      properties={itemsWithMedia}
+      pagination={{
+        currentPage: data.currentPage,
+        totalPages: data.totalPages,
+        totalCount: data.totalCount,
+      }}
+    />
   );
 }
