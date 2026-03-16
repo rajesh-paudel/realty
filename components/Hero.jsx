@@ -3,7 +3,7 @@
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-
+import nProgress from "nprogress";
 export default function Hero() {
   const router = useRouter();
   const [city, setCity] = useState("");
@@ -14,6 +14,7 @@ export default function Hero() {
     if (!trimmedCity) return;
 
     const citySlug = trimmedCity.toLowerCase().replace(/\s+/g, "-");
+    nProgress.start();
     router.push(`city/${citySlug}`);
   };
 

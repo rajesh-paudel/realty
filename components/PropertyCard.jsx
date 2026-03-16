@@ -116,7 +116,7 @@ export default function PropertyCard({ property }) {
         if (typeof window !== "undefined") {
           window.scrollTo({ top: 0, left: 0, behavior: "auto" });
         }
-        router.push(`/${cityToSlug(city)}/${mls}`, { scroll: true });
+        router.push(`/city/${cityToSlug(city)}/${mls}`, { scroll: true });
       }}
       className="group w-full bg-white rounded-xl overflow-hidden cursor-pointer shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-slate-300"
     >
