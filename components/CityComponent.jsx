@@ -2,7 +2,7 @@
 import React, { useEffect, useTransition } from "react";
 import PropertyCard from "./PropertyCard";
 import FilterBar from "./FilterBar";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { slugToCity } from "@/lib/slug";
 import CitySkeleton from "./CitySkeleton";
 
@@ -10,6 +10,7 @@ const CityComponent = ({ city, properties, pagination }) => {
   const { currentPage, totalPages, totalCount } = pagination;
   const searchParams = useSearchParams();
   const router = useRouter();
+  const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
 
   const navigate = (url, options) =>
@@ -30,7 +31,8 @@ const CityComponent = ({ city, properties, pagination }) => {
     }
     const params = new URLSearchParams(searchParams.toString());
     params.set("page", page);
-    navigate(`/listings-in-sudbury?${params.toString()}`, { scroll: true });
+    const basePath = pathname || "/listings-in-sudbury";
+    navigate(`${basePath}?${params.toString()}`, { scroll: true });
   };
 
   return (
