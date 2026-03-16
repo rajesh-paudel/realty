@@ -2,6 +2,24 @@ import CityComponent from "@/components/CityComponent";
 import { fetchProperties, fetchMedia } from "@/lib/api";
 import { slugToCity } from "@/lib/slug";
 
+const toTitleCase = (value) =>
+  value
+    .replace(/-/g, " ")
+    .split(" ")
+    .map((word) =>
+      word.length ? `${word[0].toUpperCase()}${word.slice(1)}` : word,
+    )
+    .join(" ");
+
+export async function generateMetadata({ params }) {
+  const { city } = await params;
+
+  return {
+    title: `${city} Homes for Sale | Realty Executives`,
+    description: `Browse ${city} real estate listings, featured homes, and local market insights from Realty Executives.`,
+  };
+}
+
 export default async function CityPage({ params, searchParams }) {
   const { city } = await params;
 

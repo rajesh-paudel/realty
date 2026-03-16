@@ -6,6 +6,9 @@ import { useState } from "react";
 
 export default function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isPropertiesOpen, setIsPropertiesOpen] = useState(false);
+  const closeMobileMenu = () => setIsMobileOpen(false);
+  const closePropertiesMenu = () => setIsPropertiesOpen(false);
 
   return (
     <header className="w-full bg-white border-b border-gray-100">
@@ -14,51 +17,66 @@ export default function Navbar() {
           <img src="/logo.png" alt="Realty logo" className="h-12 w-auto" />
         </Link>
         <div className="flex items-center gap-4">
-          <ul className="hidden items-center gap-7 text-base font-semibold text-gray-700 md:flex">
+          <ul className="hidden items-center gap-7 text-base font-semibold text-gray-700 lg:flex">
             <li>
               <Link className="transition-colors hover:text-blue-600" href="/">
                 Home
               </Link>
             </li>
-            <li className="group relative after:absolute after:left-0 after:top-full after:h-3 after:w-full after:content-['']">
-              <Link
-                className="inline-flex items-center gap-2 transition-colors hover:text-blue-600"
-                href="#properties"
-              >
+            <li
+              className="relative after:absolute after:left-0 after:top-full after:h-3 after:w-full after:content-['']"
+              onMouseEnter={() => setIsPropertiesOpen(true)}
+              onMouseLeave={() => setIsPropertiesOpen(false)}
+              onFocus={() => setIsPropertiesOpen(true)}
+              onBlur={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget)) {
+                  setIsPropertiesOpen(false);
+                }
+              }}
+            >
+              <div className="inline-flex items-center gap-2 transition-colors hover:text-blue-600">
                 Real Estate Properties
                 <span className="relative h-4 w-4">
                   <ChevronDown
-                    className="absolute inset-0 h-4 w-4 transition-opacity group-hover:opacity-0"
+                    className={`absolute inset-0 h-4 w-4 transition-opacity ${
+                      isPropertiesOpen ? "opacity-0" : "opacity-100"
+                    }`}
                     aria-hidden="true"
                   />
                   <ChevronUp
-                    className="absolute inset-0 h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"
+                    className={`absolute inset-0 h-4 w-4 transition-opacity ${
+                      isPropertiesOpen ? "opacity-100" : "opacity-0"
+                    }`}
                     aria-hidden="true"
                   />
                 </span>
-              </Link>
-              <div className="invisible absolute left-0 top-full z-20 mt-2 w-64 rounded-xl border border-gray-100 bg-white p-3 opacity-0 shadow-lg transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              </div>
+              <div
+                className={`absolute left-0 top-full z-50 mt-2 w-64 rounded-xl border border-gray-100 bg-white p-3 shadow-lg transition duration-150 ${
+                  isPropertiesOpen
+                    ? "visible opacity-100"
+                    : "invisible opacity-0"
+                }`}
+              >
                 <Link
                   className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
-                  href="#office-properties"
+                  href="/listings-in-sudbury"
+                  onClick={closePropertiesMenu}
+                >
+                  View Sudbury Listings
+                </Link>
+                <Link
+                  className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
+                  href="/listings-in-sudbury?homeType=Office&listingType=lease"
+                  onClick={closePropertiesMenu}
                 >
                   Office Properties
                 </Link>
+
                 <Link
                   className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
-                  href="#view-area-properties"
-                >
-                  View Area Properties
-                </Link>
-                <Link
-                  className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
-                  href="#map-area-properties"
-                >
-                  Map Area Properties
-                </Link>
-                <Link
-                  className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
-                  href="#open-houses"
+                  href={"#open-houses"}
+                  onClick={closePropertiesMenu}
                 >
                   Open Houses
                 </Link>
@@ -67,7 +85,7 @@ export default function Navbar() {
             <li>
               <Link
                 className="transition-colors hover:text-blue-600"
-                href="#executives"
+                href="/our-executives"
               >
                 Our Executives
               </Link>
@@ -75,15 +93,15 @@ export default function Navbar() {
             <li>
               <Link
                 className="transition-colors hover:text-blue-600"
-                href="/listings-in-sudbury"
+                href="/#testimonials"
               >
-                Listings
+                Testimonials
               </Link>
             </li>
             <li>
               <Link
                 className="transition-colors hover:text-blue-600"
-                href="#join"
+                href="/join-executives"
               >
                 Join Executives
               </Link>
@@ -98,7 +116,7 @@ export default function Navbar() {
             </li>
           </ul>
           <button
-            className="inline-flex items-center justify-center rounded-md  px-3 py-2 text-sm font-semibold text-gray-700 transition-colors hover:text-blue-600 md:hidden"
+            className="inline-flex items-center justify-center rounded-md  px-3 py-2 text-sm font-semibold text-gray-700 transition-colors hover:text-blue-600 lg:hidden"
             type="button"
             aria-label="Open menu"
             onClick={() => setIsMobileOpen(true)}
@@ -114,7 +132,7 @@ export default function Navbar() {
         onClick={() => setIsMobileOpen(false)}
       />
       <aside
-        className={`fixed right-0 top-0 z-50 h-full w-72 bg-white p-6 shadow-xl transition-transform md:hidden ${
+        className={`fixed right-0 top-0 z-50 h-full w-72 bg-white p-6 shadow-xl transition-transform lg:hidden ${
           isMobileOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -130,45 +148,73 @@ export default function Navbar() {
           </button>
         </div>
         <nav className="mt-6 flex flex-col gap-4 text-base font-semibold text-gray-700">
-          <Link className="hover:text-blue-600" href="/">
+          <Link
+            className="hover:text-blue-600"
+            href="/"
+            onClick={closeMobileMenu}
+          >
             Home
           </Link>
           <div>
             <Link
               className="inline-flex items-center gap-2 hover:text-blue-600"
               href="#properties"
+              onClick={closeMobileMenu}
             >
               Real Estate Properties
               <ChevronDown className="h-4 w-4" aria-hidden="true" />
             </Link>
             <div className="mt-3 flex flex-col gap-2 pl-3 text-sm font-medium text-gray-600">
-              <Link className="hover:text-blue-600" href="#office-properties">
-                Office Properties
+              <Link
+                className="hover:text-blue-600"
+                href="/listings-in-sudbury"
+                onClick={closeMobileMenu}
+              >
+                View Sudbury Listings
               </Link>
               <Link
                 className="hover:text-blue-600"
-                href="#view-area-properties"
+                href="/listings-in-sudbury?homeType=Office&listingType=lease"
+                onClick={closeMobileMenu}
               >
-                View Area Properties
+                Office Properties
               </Link>
-              <Link className="hover:text-blue-600" href="#map-area-properties">
-                Map Area Properties
-              </Link>
-              <Link className="hover:text-blue-600" href="#open-houses">
+
+              <Link
+                className="hover:text-blue-600"
+                href="#open-houses"
+                onClick={closeMobileMenu}
+              >
                 Open Houses
               </Link>
             </div>
           </div>
-          <Link className="hover:text-blue-600" href="#executives">
+          <Link
+            className="hover:text-blue-600"
+            href="/our-executives"
+            onClick={closeMobileMenu}
+          >
             Our Executives
           </Link>
-          <Link className="hover:text-blue-600" href="#testimonials">
+          <Link
+            className="hover:text-blue-600"
+            href="/#testimonials"
+            onClick={closeMobileMenu}
+          >
             Testimonials
           </Link>
-          <Link className="hover:text-blue-600" href="#join">
+          <Link
+            className="hover:text-blue-600"
+            href="/join-executives"
+            onClick={closeMobileMenu}
+          >
             Join Executives
           </Link>
-          <Link className="hover:text-blue-600" href="#contact">
+          <Link
+            className="hover:text-blue-600"
+            href="/contact"
+            onClick={closeMobileMenu}
+          >
             Contact
           </Link>
         </nav>

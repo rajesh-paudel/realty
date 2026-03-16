@@ -71,12 +71,12 @@ const Slider = ({
             </span>
           </div>
           <Link
-            href={`/${targetCitySlug}`}
+            href={`/listings-in-sudbury?homeType=${homeType}`}
             scroll={true}
             onClick={() =>
               window.scrollTo({ top: 0, left: 0, behavior: "auto" })
             }
-            className="inline-flex items-center gap-2 self-start text-sm font-semibold text-slate-700 transition-colors hover:text-amber-700 sm:self-auto sm:text-base whitespace-nowrap"
+            className="inline-flex items-center gap-2 self-start text-sm font-semibold text-rose-500 transition-colors  sm:self-auto sm:text-base whitespace-nowrap cursor-pointer"
           >
             See all
             <ArrowRight size={16} />

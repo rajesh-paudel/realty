@@ -140,7 +140,7 @@ export default function PropertyCard({ property }) {
         )}
 
         {/* Status Badge */}
-        <div className="absolute bottom-3 right-3 bg-blue-500  text-white text-xs font-semibold px-2 py-1 rounded ">
+        <div className="absolute bottom-3 right-3 bg-rose-500  text-white text-xs font-semibold px-2 py-1 rounded ">
           {timeAgoLabel}
         </div>
 
@@ -150,9 +150,9 @@ export default function PropertyCard({ property }) {
       </div>
 
       {/* Content Section */}
-      <div className="px-3.5 pt-2 pb-4 space-y-1">
+      <div className="pr-3.5 pt-2 pb-4 space-y-1">
         <div>
-          <h3 className="text-xl sm:text-2xl font-bold text-blue-950">
+          <h3 className="text-xl sm:text-2xl font-bold text-rose-500">
             {formattedPrice}
           </h3>
           <p className="text-sm text-gray-700 truncate font-medium">

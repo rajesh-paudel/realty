@@ -53,7 +53,7 @@ export default function Hero() {
 
           <button
             type="submit"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-white transition hover:bg-blue-700"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-rose-500 text-white transition hover:bg-rose-700 cursor-pointer"
           >
             <Search className="h-4 w-4" />
           </button>

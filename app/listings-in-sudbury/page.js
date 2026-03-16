@@ -1,6 +1,12 @@
 import CityComponent from "@/components/CityComponent";
 import { fetchProperties, fetchMedia } from "@/lib/api";
 
+export const metadata = {
+  title: "Listings in Sudbury | Realty Executives",
+  description:
+    "Browse current Sudbury real estate listings and featured properties.",
+};
+
 export default async function CityPage({ params, searchParams }) {
   const sParams = await searchParams;
 

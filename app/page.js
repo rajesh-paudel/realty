@@ -3,6 +3,16 @@ import { fetchMedia, fetchProperties } from "@/lib/api";
 import { cityToSlug } from "@/lib/slug";
 import Slider from "@/components/Slider";
 import Testimonials from "@/components/Testimonials";
+import ContactBanner from "@/components/ContactBanner";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import ServicesSection from "@/components/ServicesSection";
+import ContactForm from "@/components/ContactForm";
+
+export const metadata = {
+  title: "Realty Executives Sudbury | Homes for Sale & Local Experts",
+  description:
+    "Discover Sudbury homes for sale, expert agents, and local market insights from Realty Executives.",
+};
 export default async function Home() {
   const Types = [
     "Detached",
@@ -48,10 +58,11 @@ export default async function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Hero />
+      <WhyChooseUs />
       <section className="mx-auto max-w-5xl px-6 py-10 text-center">
         <h2 className="text-3xl font-semibold text-slate-900 sm:text-5xl font-serif">
           Newest homes for sale in
-          <span className="mt-2 block text-pink-500">Sudbury</span>
+          <span className="mt-2 block text-rose-500">Sudbury</span>
         </h2>
       </section>
       {featuredSections.map((section, index) => (
@@ -64,6 +75,14 @@ export default async function Home() {
           totalCount={section.totalCount}
         />
       ))}
+      <ServicesSection />
+      <ContactBanner />
+      <ContactForm
+        compact
+        title="Ready to get started?"
+        description="Tell us what you're looking for and we'll be in touch shortly."
+        submitLabel="Send request"
+      />
       <Testimonials />
     </main>
   );
