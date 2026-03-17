@@ -72,6 +72,105 @@ export default function JoinExecutivesPage() {
           </div>
         </div>
 
+        <section className="mt-12 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold text-slate-900">
+              Built for growth, backed by leadership
+            </h2>
+            <p className="mt-3 text-sm text-slate-600 sm:text-base">
+              You&apos;ll have hands-on support, proven systems, and local market
+              insight to help you reach the next level with confidence.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4">
+                <h3 className="text-sm font-semibold text-slate-900">
+                  Lead &amp; Listing Support
+                </h3>
+                <p className="mt-2 text-xs text-slate-600">
+                  Listing launch kits, marketing templates, and lead routing to
+                  keep momentum strong.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4">
+                <h3 className="text-sm font-semibold text-slate-900">
+                  Coaching &amp; Mentorship
+                </h3>
+                <p className="mt-2 text-xs text-slate-600">
+                  One-on-one guidance, roleplay, and accountability that move
+                  your pipeline forward.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4">
+                <h3 className="text-sm font-semibold text-slate-900">
+                  Brand &amp; Tech Tools
+                </h3>
+                <p className="mt-2 text-xs text-slate-600">
+                  Social assets, CMAs, and mobile marketing tools that make you
+                  easy to choose.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4">
+                <h3 className="text-sm font-semibold text-slate-900">
+                  Office &amp; Community
+                </h3>
+                <p className="mt-2 text-xs text-slate-600">
+                  Modern workspaces, collaborative culture, and local
+                  partnerships to expand reach.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold text-slate-900">
+              What the first 30 days look like
+            </h2>
+            <p className="mt-3 text-sm text-slate-600 sm:text-base">
+              A clear onboarding path so you can focus on building relationships
+              and closing deals.
+            </p>
+            <ol className="mt-6 space-y-4 text-sm text-slate-700">
+              <li className="flex gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-rose-600/10 text-sm font-semibold text-rose-600">
+                  1
+                </span>
+                <div>
+                  <p className="font-semibold text-slate-900">
+                    Orientation &amp; Setup
+                  </p>
+                  <p className="text-xs text-slate-600">
+                    Tools, CRM, listings workflow, and marketing assets.
+                  </p>
+                </div>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-rose-600/10 text-sm font-semibold text-rose-600">
+                  2
+                </span>
+                <div>
+                  <p className="font-semibold text-slate-900">
+                    Business Planning
+                  </p>
+                  <p className="text-xs text-slate-600">
+                    Pipeline goals, prospecting plan, and weekly checkpoints.
+                  </p>
+                </div>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-rose-600/10 text-sm font-semibold text-rose-600">
+                  3
+                </span>
+                <div>
+                  <p className="font-semibold text-slate-900">Go-to-Market</p>
+                  <p className="text-xs text-slate-600">
+                    Launch your brand, marketing, and listing pipeline.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
         <div className="mt-14 rounded-3xl border border-slate-100 bg-white p-6 shadow-lg sm:p-8">
           <div className="mb-6 text-center">
             <h2 className="text-2xl font-semibold text-slate-900">

@@ -119,6 +119,36 @@ export default function OurExecutivesPage() {
             </p>
           </div>
 
+          <div className="grid gap-5 md:grid-cols-3">
+            <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+              <h2 className="text-base font-semibold text-slate-900">
+                Local Expertise
+              </h2>
+              <p className="mt-2 text-sm text-slate-600">
+                Our executives live and work in Sudbury, bringing trusted market
+                insights to every client.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+              <h2 className="text-base font-semibold text-slate-900">
+                Tailored Guidance
+              </h2>
+              <p className="mt-2 text-sm text-slate-600">
+                From first tours to closing day, we build a plan around your
+                goals and timeline.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+              <h2 className="text-base font-semibold text-slate-900">
+                Full-Service Support
+              </h2>
+              <p className="mt-2 text-sm text-slate-600">
+                Marketing, negotiations, and local partnerships that help you
+                move with confidence.
+              </p>
+            </div>
+          </div>
+
           <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center">
             <div className="flex w-full items-center gap-2 rounded-full border border-[#e6e0d6] bg-white px-4 py-2 shadow-sm">
               <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#8c7a6a]">
@@ -145,48 +175,48 @@ export default function OurExecutivesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="mx-auto max-w-6xl px-6 pb-14 pt-6">
+        <div className="grid justify-items-center gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {filteredExecutives.map((exec) => (
             <article
               key={exec.id}
-              className="group flex h-full flex-col overflow-hidden rounded-3xl border border-[#eee6dc] bg-white shadow-[0_18px_40px_-30px_rgba(17,12,5,0.25)] transition hover:-translate-y-1 hover:shadow-[0_28px_55px_-32px_rgba(17,12,5,0.35)]"
+              className="flex h-full w-full max-w-[280px] flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:shadow-md"
             >
               <div className="relative overflow-hidden">
-                <div className="relative mx-auto flex h-60 w-40 items-center justify-center bg-white">
+                <div className="relative mx-auto flex aspect-[4/5] w-full items-center justify-center bg-slate-50">
                   {exec.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={exec.image}
                       alt={exec.name}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover object-top"
                     />
                   ) : (
-                    <div className="flex h-32 w-32 items-center justify-center rounded-full border border-[#f0ebe2] bg-white text-3xl font-semibold text-rose-600 shadow-sm">
+                    <div className="flex h-32 w-32 items-center justify-center rounded-full border border-slate-200 bg-white text-3xl font-semibold text-rose-600 shadow-sm">
                       {getInitials(exec.name)}
                     </div>
                   )}
                 </div>
               </div>
 
-              <div className="flex flex-1 flex-col gap-4 px-6 pb-6 pt-5">
+              <div className="flex flex-1 flex-col gap-3 px-5 pb-5 pt-4">
                 <div>
-                  <h2 className="text-xl font-semibold text-[#1f1a17]">
+                  <h2 className="text-lg font-semibold text-slate-900">
                     {exec.name}
                   </h2>
-                  <p className="text-sm text-[#8a7b6d]">{exec.role}</p>
+                  <p className="text-sm text-slate-600">{exec.role}</p>
                 </div>
 
-                <div className="flex items-center justify-between text-sm text-[#40352c]">
+                <div className="flex items-center justify-between text-xs text-slate-700">
                   <span className="font-semibold">{exec.phoneLabel}:</span>
-                  <span className="rounded-full bg-[#f6f3ee] px-3 py-1 font-semibold">
+                  <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold">
                     {exec.phone}
                   </span>
                 </div>
 
                 <button
                   type="button"
-                  className="mt-auto inline-flex items-center justify-center rounded-full bg-rose-600 px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90 cursor-pointer"
+                  className="mt-auto inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-800 transition hover:border-slate-300"
                 >
                   View Profile
                 </button>

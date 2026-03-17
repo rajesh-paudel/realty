@@ -13,13 +13,13 @@ export default function Footer() {
         </div>
         <div className="space-y-3">
           <h3 className="text-lg font-semibold text-slate-900">Contact Info</h3>
-          <p className="text-sm text-slate-600">Office: 705-586-3334</p>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-slate-700">Office: 705-586-3334</p>
+          <p className="text-sm text-slate-700">
             Email: sudburybroker@gmail.com
           </p>
           <div className="flex items-center gap-3 text-sm">
             <Link
-              className="flex items-center gap-2 text-slate-600 hover:text-slate-900"
+              className="flex items-center gap-2 text-slate-700 hover:text-slate-900"
               href="https://www.facebook.com/realtyexecutivesofsudbury"
               target="_blank"
               rel="noreferrer"
@@ -39,17 +39,17 @@ export default function Footer() {
           <h3 className="text-lg font-semibold text-slate-900">
             Office Location
           </h3>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-slate-700">
             765 Barrydowne Rd Unit #101 Sudbury, ON P3A-3T6
           </p>
           <div className="mt-4 flex flex-col gap-2 text-sm">
             <Link
-              className="text-slate-600 hover:text-slate-900"
+              className="text-slate-700 hover:text-slate-900"
               href="#privacy"
             >
               Privacy Policy
             </Link>
-            <Link className="text-slate-600 hover:text-slate-900" href="#terms">
+            <Link className="text-slate-700 hover:text-slate-900" href="#terms">
               Terms of Service
             </Link>
           </div>

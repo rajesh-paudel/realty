@@ -7,13 +7,20 @@ export default function ContactForm({
   return (
     <section className="bg-white">
       <div
-        className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${
-          compact ? "py-10" : "py-12"
+        className={`mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 ${
+          compact ? "py-8 sm:py-10" : "py-8 sm:py-12"
         }`}
       >
-        <div className="mx-auto max-w-4xl rounded-3xl border border-slate-100 bg-white p-6 shadow-lg sm:p-8">
+        <div className="mx-auto w-full max-w-4xl rounded-3xl border border-slate-100 bg-white p-3 shadow-lg sm:p-8">
           <div className="mb-6 text-center">
-            <h2 className="text-2xl font-semibold text-slate-900">{title}</h2>
+            <img
+              src="/logo.png"
+              alt="Realty logo"
+              className="mx-auto mb-4 h-16 w-auto sm:h-20"
+            />
+            <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+              {title}
+            </h2>
             <p className="mt-2 text-sm text-slate-600">{description}</p>
           </div>
 

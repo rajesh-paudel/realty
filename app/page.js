@@ -14,14 +14,7 @@ export const metadata = {
     "Discover Sudbury homes for sale, expert agents, and local market insights from Realty Executives.",
 };
 export default async function Home() {
-  const Types = [
-    "Detached",
-    "Condo Apartment",
-    "Semi-Detached ",
-    "Condo Townhouse",
-    "Att/Row/Townhouse",
-    "Link",
-  ];
+  const Types = ["Detached", "Condo Apartment", "Multiplex", "Vacant Land"];
   const featuredByCity = await Promise.all(
     Types.map(async (homeType) => {
       const data = await fetchProperties({
@@ -58,11 +51,11 @@ export default async function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Hero />
-      <WhyChooseUs />
-      <section className="mx-auto max-w-5xl px-6 py-10 text-center">
+
+      <section className="mx-auto max-w-5xl px-6 py-10 mt-6 text-center">
         <h2 className="text-3xl font-semibold text-slate-900 sm:text-5xl font-serif">
-          Newest homes for sale in
-          <span className="mt-2 block text-rose-500">Sudbury</span>
+          New homes for sale in
+          <span className=" ml-4 text-rose-500">Sudbury</span>
         </h2>
       </section>
       {featuredSections.map((section, index) => (
@@ -75,7 +68,8 @@ export default async function Home() {
           totalCount={section.totalCount}
         />
       ))}
-      <ServicesSection />
+      <WhyChooseUs />
+
       <ContactBanner />
       <ContactForm
         compact

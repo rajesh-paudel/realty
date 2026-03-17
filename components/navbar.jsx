@@ -1,17 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronDown, ChevronUp, Menu, X } from "lucide-react";
+import { ChevronDown, ChevronUp, Menu, Phone, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isPropertiesOpen, setIsPropertiesOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const closeMobileMenu = () => setIsMobileOpen(false);
   const closePropertiesMenu = () => setIsPropertiesOpen(false);
 
   return (
-    <header className="w-full bg-white border-b border-gray-100">
+    <header
+      className={`w-full border-b border-gray-100 ${
+        isHome ? "bg-[#e6f3ff]" : "bg-white"
+      }`}
+    >
       <nav className="mx-auto flex w-full items-center justify-between px-3 sm:px-8 py-4">
         <Link href="/" className="flex items-center gap-3">
           <img src="/logo.png" alt="Realty logo" className="h-12 w-auto" />
@@ -90,14 +97,7 @@ export default function Navbar() {
                 Our Executives
               </Link>
             </li>
-            <li>
-              <Link
-                className="transition-colors hover:text-blue-600"
-                href="/#testimonials"
-              >
-                Testimonials
-              </Link>
-            </li>
+
             <li>
               <Link
                 className="transition-colors hover:text-blue-600"
@@ -113,6 +113,32 @@ export default function Navbar() {
               >
                 Contact
               </Link>
+            </li>
+            <li>
+              <a
+                className="inline-flex items-center gap-2 transition-colors hover:text-blue-600"
+                href="tel:7055863334"
+              >
+                <Phone className="h-4 w-4" aria-hidden="true" />
+                705-586-3334
+              </a>
+            </li>
+            <li>
+              <a
+                className="inline-flex items-center gap-2 transition-colors hover:text-blue-600"
+                href="https://www.facebook.com/realtyexecutivesofsudbury"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Realty Executives of Sudbury on Facebook"
+              >
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="h-4 w-4 fill-current"
+                >
+                  <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.495v-9.294H9.691V11.13h3.13V8.41c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.505 0-1.796.715-1.796 1.763v2.31h3.59l-.467 3.576h-3.123V24h6.123C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0z" />
+                </svg>
+              </a>
             </li>
           </ul>
           <button
@@ -196,13 +222,7 @@ export default function Navbar() {
           >
             Our Executives
           </Link>
-          <Link
-            className="hover:text-blue-600"
-            href="/#testimonials"
-            onClick={closeMobileMenu}
-          >
-            Testimonials
-          </Link>
+
           <Link
             className="hover:text-blue-600"
             href="/join-executives"
@@ -217,6 +237,30 @@ export default function Navbar() {
           >
             Contact
           </Link>
+          <a
+            className="inline-flex items-center gap-2 hover:text-blue-600"
+            href="tel:7055863334"
+            onClick={closeMobileMenu}
+          >
+            <Phone className="h-4 w-4" aria-hidden="true" />
+            705-586-3334
+          </a>
+          <a
+            className="inline-flex items-center gap-2 hover:text-blue-600"
+            href="https://www.facebook.com/realtyexecutivesofsudbury"
+            target="_blank"
+            rel="noreferrer"
+            onClick={closeMobileMenu}
+          >
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="h-4 w-4 fill-current"
+            >
+              <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.495v-9.294H9.691V11.13h3.13V8.41c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.505 0-1.796.715-1.796 1.763v2.31h3.59l-.467 3.576h-3.123V24h6.123C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0z" />
+            </svg>
+            Facebook
+          </a>
         </nav>
       </aside>
     </header>

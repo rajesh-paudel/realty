@@ -58,16 +58,13 @@ const Slider = ({
     listingCount,
   );
   return (
-    <section
-      id={sectionId}
-      className={`bg-white w-full max-w-7xl mx-auto pb-4`}
-    >
+    <section id={sectionId} className={`bg-white w-full  mx-auto pb-4`}>
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className=" flex flex-col gap-3 mb-4 sm:flex-row sm:items-end sm:justify-between">
-          <div className="text-xl font-serif text-slate-900 tracking-tight hover:underline sm:text-2xl md:text-3xl">
-            {homeType} Listings
+          <div className="text-xl font-serif text-slate-900 tracking-tight  sm:text-2xl md:text-3xl">
+            {homeType} for sale in Sudbury
             <span className="ml-1 text-sm font-medium text-slate-800 sm:text-base md:text-xl">
-              ({formattedListingCount}+ homes for sale)
+              ({formattedListingCount}+ listings)
             </span>
           </div>
           <Link
