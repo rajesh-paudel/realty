@@ -5,7 +5,8 @@ import Slider from "@/components/Slider";
 import Testimonials from "@/components/Testimonials";
 import ContactBanner from "@/components/ContactBanner";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import ServicesSection from "@/components/ServicesSection";
+import MortgageSection from "@/components/MortgageSection";
+import LatestBlogs from "@/components/LatestBlogs";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
@@ -14,7 +15,7 @@ export const metadata = {
     "Discover Sudbury homes for sale, expert agents, and local market insights from Realty Executives.",
 };
 export default async function Home() {
-  const Types = ["Detached", "Condo Apartment", "Multiplex", "Vacant Land"];
+  const Types = ["Multiplex", "Vacant Land", "Detached"];
   const featuredByCity = await Promise.all(
     Types.map(async (homeType) => {
       const data = await fetchProperties({
@@ -46,7 +47,7 @@ export default async function Home() {
   );
 
   const featuredSections = featuredByCity.filter(
-    (section) => section.properties.length > 0,
+    (section) => section?.properties?.length > 0,
   );
   return (
     <main className="min-h-screen bg-white">
@@ -69,15 +70,19 @@ export default async function Home() {
         />
       ))}
       <WhyChooseUs />
-
+      <MortgageSection />
       <ContactBanner />
-      <ContactForm
-        compact
-        title="Ready to get started?"
-        description="Tell us what you're looking for and we'll be in touch shortly."
-        submitLabel="Send request"
-      />
+      <LatestBlogs />
+
       <Testimonials />
+      <div className="py-16">
+        <ContactForm
+          compact
+          title="Ready to get started?"
+          description="Tell us what you're looking for and we'll be in touch shortly."
+          submitLabel="Send request"
+        />
+      </div>
     </main>
   );
 }

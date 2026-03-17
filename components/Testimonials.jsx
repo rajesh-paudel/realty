@@ -52,8 +52,8 @@ const truncateText = (text, maxLength = 240) =>
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="bg-slate-50">
-      <div className="mx-auto max-w-6xl px-6 py-12 sm:py-14">
+    <section id="testimonials" className="bg-slate-50 py-12">
+      <div className="mx-auto max-w-6xl px-6  sm:py-14">
         <div className="text-center">
           <p className="text-xs uppercase tracking-[0.25em] text-slate-500">
             Testimonials

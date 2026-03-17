@@ -48,19 +48,19 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-slate-50/60">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-rose-100/60 blur-[120px]" />
+    <section className="relative overflow-hidden border-t border-slate-100 bg-white">
+      <div className="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-rose-100/60 blur-[120px]" />
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-5xl text-center">
           <p className="text-xs uppercase tracking-[0.32em] text-slate-500">
             Why Choose Us
           </p>
-          <h2 className="mt-4 text-4xl font-semibold text-slate-900 sm:text-5xl font-serif">
-            A smarter, more personal way to buy or sell in Sudbury
+          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl font-serif">
+            The local team that keeps your move on track
           </h2>
-          <p className="mt-4 text-base text-slate-600 sm:text-lg">
-            We combine local insight with modern marketing and hands-on support
-            so you feel confident at every step.
+          <p className="mt-4 text-sm text-slate-600 sm:text-base">
+            Practical strategy, honest guidance, and steady communication from
+            day one to closing day.
           </p>
         </div>
 
@@ -87,15 +87,14 @@ export default function WhyChooseUs() {
           })}
         </div>
 
-        <div className="mt-12 grid gap-6 rounded-3xl border border-slate-100 bg-white p-6 shadow-sm md:grid-cols-[1.1fr_0.9fr] sm:p-8">
+        <div className="mt-12 grid gap-6 rounded-3xl border border-slate-100 bg-slate-50/60 p-6 shadow-sm md:grid-cols-[1.1fr_0.9fr] sm:p-8">
           <div>
             <h3 className="text-2xl font-semibold text-slate-900">
-              Dedicated guidance for every stage
+              A plan built around your goals
             </h3>
             <p className="mt-3 text-sm text-slate-600 sm:text-base">
-              Whether you&apos;re buying your first home or selling a long-time
-              property, our team builds a tailored plan with weekly checkpoints,
-              pricing strategy, and negotiation support.
+              We align pricing, marketing, and negotiation with your timeline,
+              so every decision stays focused on results.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <span className="rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-700">

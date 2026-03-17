@@ -1,0 +1,96 @@
+import Link from "next/link";
+
+const posts = [
+  {
+    title: "How to prepare your Sudbury home for a fast sale",
+    excerpt:
+      "A step-by-step checklist for staging, pricing, and timing your listing for maximum attention.",
+    date: "Mar 12, 2025",
+    readTime: "5 min read",
+    tag: "Selling",
+    image: "/hero.png",
+    slug: "prepare-your-sudbury-home-for-sale",
+  },
+  {
+    title: "First-time buyer mistakes to avoid",
+    excerpt:
+      "From pre-approval to final walk-through, here are the most common pitfalls and how to avoid them.",
+    date: "Feb 28, 2025",
+    readTime: "6 min read",
+    tag: "Buying",
+    image: "/join-executives.png",
+    slug: "first-time-buyer-mistakes-to-avoid",
+  },
+  {
+    title: "What rising rates mean for Northern Ontario buyers",
+    excerpt:
+      "A quick guide to budgeting, lender options, and making offers with confidence.",
+    date: "Feb 10, 2025",
+    readTime: "4 min read",
+    tag: "Market",
+    image: "/hero.png",
+    slug: "rising-rates-northern-ontario-buyers",
+  },
+];
+
+export const metadata = {
+  title: "Realty Executives Sudbury | Blog",
+  description:
+    "Local real estate insights, buying and selling tips, and market updates for Sudbury.",
+};
+
+export default function BlogIndexPage() {
+  return (
+    <main className="min-h-screen bg-white">
+      <section className="mx-auto max-w-7xl px-6 py-12 sm:py-16">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs uppercase tracking-[0.32em] text-slate-500">
+            Blog
+          </p>
+          <h1 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl font-serif">
+            Real estate advice for Sudbury homeowners
+          </h1>
+          <p className="mt-4 text-sm text-slate-600 sm:text-base">
+            Practical guidance on buying, selling, and market changes from the
+            Realty Executives team.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {posts.map((post) => (
+            <article
+              key={post.slug}
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="h-48 w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+                />
+                <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-slate-700">
+                  {post.tag}
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col gap-3 px-5 pb-6 pt-5">
+                <div className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                  {post.date} · {post.readTime}
+                </div>
+                <h2 className="text-lg font-semibold text-slate-900">
+                  {post.title}
+                </h2>
+                <p className="text-sm text-slate-600">{post.excerpt}</p>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-rose-600 transition hover:text-rose-700"
+                >
+                  Read article
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}
