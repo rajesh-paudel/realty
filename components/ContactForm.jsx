@@ -3,6 +3,7 @@ export default function ContactForm({
   description = "Share a few details and our team will reach out with next steps.",
   submitLabel = "Send message",
   compact = false,
+  showHeader = true,
 }) {
   return (
     <section className="bg-white">
@@ -11,17 +12,18 @@ export default function ContactForm({
           compact ? "py-8 sm:py-10" : "py-8 sm:py-12"
         }`}
       >
-        <div className="mx-auto w-full max-w-4xl rounded-3xl border border-slate-100 bg-white p-3 shadow-lg sm:p-8">
+        <div className="mx-auto w-full max-w-4xl rounded-3xl border border-slate-200 bg-white p-3  sm:p-8">
           <div className="mb-6 text-center">
             <img
               src="/logo.png"
               alt="Realty logo"
               className="mx-auto mb-4 h-16 w-auto sm:h-20"
             />
-            <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
-              {title}
-            </h2>
-            <p className="mt-2 text-sm text-slate-600">{description}</p>
+            {showHeader && (
+              <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+                {title}
+              </h2>
+            )}
           </div>
 
           <form className="space-y-5">
@@ -34,7 +36,7 @@ export default function ContactForm({
                   First name
                 </label>
                 <input
-                  className="h-11 rounded-xl border border-slate-200 px-4 text-sm text-slate-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                  className="h-11 rounded-xl border border-slate-200 bg-slate-100 px-4 text-sm text-slate-700 placeholder:text-slate-400 outline-none transition hover:border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                   id="firstName"
                   name="firstName"
                   placeholder="Jamie"
@@ -49,7 +51,7 @@ export default function ContactForm({
                   Last name
                 </label>
                 <input
-                  className="h-11 rounded-xl border border-slate-200 px-4 text-sm text-slate-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                  className="h-11 rounded-xl border border-slate-200 bg-slate-100 px-4 text-sm text-slate-700 placeholder:text-slate-400 outline-none transition hover:border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                   id="lastName"
                   name="lastName"
                   placeholder="Lee"
@@ -66,7 +68,7 @@ export default function ContactForm({
                   Email
                 </label>
                 <input
-                  className="h-11 rounded-xl border border-slate-200 px-4 text-sm text-slate-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                  className="h-11 rounded-xl border border-slate-200 bg-slate-100 px-4 text-sm text-slate-700 placeholder:text-slate-400 outline-none transition hover:border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                   id="email"
                   name="email"
                   placeholder="you@email.com"
@@ -81,7 +83,7 @@ export default function ContactForm({
                   Phone
                 </label>
                 <input
-                  className="h-11 rounded-xl border border-slate-200 px-4 text-sm text-slate-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                  className="h-11 rounded-xl border border-slate-200 bg-slate-100 px-4 text-sm text-slate-700 placeholder:text-slate-400 outline-none transition hover:border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                   id="phone"
                   name="phone"
                   placeholder="(705) 000-0000"
@@ -99,7 +101,7 @@ export default function ContactForm({
                     I&apos;m interested in
                   </label>
                   <select
-                    className="h-11 rounded-xl border border-slate-200 bg-white px-4 text-sm text-slate-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                    className="h-11 rounded-xl border border-slate-200 bg-slate-100 px-4 text-sm text-slate-700 outline-none transition hover:border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                     id="interest"
                     name="interest"
                   >
@@ -117,7 +119,7 @@ export default function ContactForm({
                     Ideal move date
                   </label>
                   <input
-                    className="h-11 rounded-xl border border-slate-200 px-4 text-sm text-slate-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                    className="h-11 rounded-xl border border-slate-200 bg-slate-100 px-4 text-sm text-slate-700 placeholder:text-slate-400 outline-none transition hover:border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                     id="timeline"
                     name="timeline"
                     placeholder="Within 3 months"
@@ -134,7 +136,7 @@ export default function ContactForm({
                 How can we help?
               </label>
               <textarea
-                className="min-h-[120px] rounded-xl border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                className="min-h-[120px] rounded-xl border border-slate-200 bg-slate-100 px-4 py-3 text-sm text-slate-700 placeholder:text-slate-400 outline-none transition hover:border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                 id="message"
                 name="message"
                 placeholder="Tell us about neighborhoods, price range, and any must-haves."

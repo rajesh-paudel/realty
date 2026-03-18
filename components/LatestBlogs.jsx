@@ -38,39 +38,27 @@ export default function LatestBlogs() {
   return (
     <section className="border-t border-slate-100 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="flex flex-col items-center gap-6 text-center">
-          <div className="max-w-5xl">
-            <p className="text-xs uppercase tracking-[0.32em] text-slate-500">
-              Latest Blogs
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl font-serif">
-              Real estate tips you can use right away
-            </h2>
-            <p className="mt-4 text-sm text-slate-600 sm:text-base">
-              Practical updates on buying, selling, and local market changes
-              written for Sudbury homebuyers and sellers.
-            </p>
-          </div>
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-800 transition hover:border-slate-300"
-          >
-            View all articles
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+        <div className="text-center">
+          <h2 className="mt-4 text-4xl font-semibold text-slate-900 sm:text-5xl ">
+            Our Blogs &amp; Insight
+          </h2>
+          <p className="mt-4 text-base text-slate-600 sm:text-lg">
+            We dive into local market moves, buying tips, and selling strategies
+            that help our clients make confident real estate decisions.
+          </p>
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {posts.map((post) => (
             <article
               key={post.title}
-              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white "
             >
               <div className="relative overflow-hidden">
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="h-48 w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+                  className="h-48 w-full object-cover "
                 />
                 <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-slate-700">
                   {post.tag}

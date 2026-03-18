@@ -107,7 +107,7 @@ export default function OurExecutivesPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <section className="border-b border-[#eee6dc] bg-white">
+      <section className=" bg-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-8">
           <div className="max-w-2xl">
             <h1 className="mt-3 text-4xl font-semibold text-[#1f1a17] sm:text-5xl">
@@ -148,30 +148,6 @@ export default function OurExecutivesPage() {
               </p>
             </div>
           </div>
-
-          <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center">
-            <div className="flex w-full items-center gap-2 rounded-full border border-[#e6e0d6] bg-white px-4 py-2 shadow-sm">
-              <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#8c7a6a]">
-                Search
-              </span>
-              <input
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="Find agent by name"
-                className="w-full border-0 bg-transparent text-sm text-[#2a2420] outline-none placeholder:text-[#b1a59a]"
-              />
-            </div>
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-full bg-rose-600 px-6 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-90"
-            >
-              Search
-            </button>
-          </div>
-
-          <div className="text-sm font-semibold text-[#7a6d62]">
-            {filteredExecutives.length} Realtors found
-          </div>
         </div>
       </section>
 
@@ -180,7 +156,7 @@ export default function OurExecutivesPage() {
           {filteredExecutives.map((exec) => (
             <article
               key={exec.id}
-              className="flex h-full w-full max-w-[280px] flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:shadow-md"
+              className="flex h-full w-full max-w-[280px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white "
             >
               <div className="relative overflow-hidden">
                 <div className="relative mx-auto flex aspect-[4/5] w-full items-center justify-center bg-slate-50">
@@ -225,7 +201,6 @@ export default function OurExecutivesPage() {
           ))}
         </div>
       </section>
-
     </main>
   );
 }
