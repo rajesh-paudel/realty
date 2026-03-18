@@ -37,15 +37,11 @@ const posts = [
 export default function LatestBlogs() {
   return (
     <section className="border-t border-slate-100 bg-white">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-26 lg:px-8">
         <div className="text-center">
           <h2 className="mt-4 text-4xl font-semibold text-slate-900 sm:text-5xl ">
-            Our Blogs &amp; Insight
+            Read Our Latest Blogs
           </h2>
-          <p className="mt-4 text-base text-slate-600 sm:text-lg">
-            We dive into local market moves, buying tips, and selling strategies
-            that help our clients make confident real estate decisions.
-          </p>
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -65,20 +61,13 @@ export default function LatestBlogs() {
                 </span>
               </div>
               <div className="flex flex-1 flex-col gap-3 px-5 pb-6 pt-5">
-                <div className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                <div className="text-xs  text-slate-700">
                   {post.date} {"\u00b7"} {post.readTime}
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900">
                   {post.title}
                 </h3>
                 <p className="text-sm text-slate-600">{post.excerpt}</p>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-rose-600 transition hover:text-rose-700"
-                >
-                  Read article
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
               </div>
             </article>
           ))}

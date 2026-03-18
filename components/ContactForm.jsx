@@ -4,6 +4,8 @@ export default function ContactForm({
   submitLabel = "Send message",
   compact = false,
   showHeader = true,
+  showLogo = true,
+  borderless = true,
 }) {
   return (
     <section className="bg-white">
@@ -12,13 +14,19 @@ export default function ContactForm({
           compact ? "py-8 sm:py-10" : "py-8 sm:py-12"
         }`}
       >
-        <div className="mx-auto w-full max-w-4xl rounded-3xl border border-slate-200 bg-white p-3  sm:p-8">
-          <div className="mb-6 text-center">
-            <img
-              src="/logo.png"
-              alt="Realty logo"
-              className="mx-auto mb-4 h-16 w-auto sm:h-20"
-            />
+        <div
+          className={`mx-auto w-full max-w-4xl rounded-3xl bg-white p-3  sm:p-8 ${
+            borderless ? "" : "border border-slate-200"
+          }`}
+        >
+          <div className="mb-10 text-center ">
+            {showLogo && (
+              <img
+                src="/logo.png"
+                alt="Realty logo"
+                className="mx-auto mb-4 h-16 w-auto sm:h-20"
+              />
+            )}
             {showHeader && (
               <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
                 {title}

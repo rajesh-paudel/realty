@@ -156,7 +156,7 @@ export default function OurExecutivesPage() {
           {filteredExecutives.map((exec) => (
             <article
               key={exec.id}
-              className="flex h-full w-full max-w-[280px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white "
+              className="group flex h-full w-full max-w-[280px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="relative overflow-hidden">
                 <div className="relative mx-auto flex aspect-[4/5] w-full items-center justify-center bg-slate-50">
@@ -165,7 +165,7 @@ export default function OurExecutivesPage() {
                     <img
                       src={exec.image}
                       alt={exec.name}
-                      className="h-full w-full object-cover object-top"
+                      className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-105"
                     />
                   ) : (
                     <div className="flex h-32 w-32 items-center justify-center rounded-full border border-slate-200 bg-white text-3xl font-semibold text-rose-600 shadow-sm">
@@ -183,10 +183,9 @@ export default function OurExecutivesPage() {
                   <p className="text-sm text-slate-600">{exec.role}</p>
                 </div>
 
-                <div className="flex items-center justify-between text-xs text-slate-700">
-                  <span className="font-semibold">{exec.phoneLabel}:</span>
-                  <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold">
-                    {exec.phone}
+                <div className="flex items-center  text-xs text-slate-700">
+                  <span className="font-semibold">
+                    {exec.phoneLabel}: {exec.phone}
                   </span>
                 </div>
 

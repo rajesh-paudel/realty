@@ -5,16 +5,10 @@ export default function ContactBanner() {
     <section className="bg-[#072a4a] px-6 py-12 text-white shadow-[0_24px_50px_-35px_rgba(2,10,20,0.6)]">
       <div className="mx-auto max-w-6xl">
         <div className="relative overflow-hidden text-center">
-          <div className="pointer-events-none absolute inset-0 opacity-40">
-            <div className="absolute -right-24 top-8 h-56 w-56 rounded-full bg-[#1a4a78] blur-3xl" />
-            <div className="absolute -left-20 bottom-0 h-48 w-48 rounded-full bg-[#0a3a5f] blur-3xl" />
-          </div>
+          <div className="pointer-events-none absolute inset-0 opacity-40"></div>
           <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#a9c6e8]">
-              We Have Answers
-            </p>
             <h2 className="text-3xl font-semibold sm:text-4xl">
-              Have Real Estate Questions?
+              Need Any Help Buying/Selling in Sudbury ?
             </h2>
             <p className="text-sm text-[#d7e6f8] sm:text-base">
               Connect with our executive team for guidance on buying, selling,

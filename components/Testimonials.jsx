@@ -4,7 +4,7 @@ const testimonials = [
   {
     quote:
       "Carl and his team at Realty Executives were amazing to work with! We were searching for our first home for quite some time and he made the process so easy and enjoyable! We battled some issues along the way but Carl was there through every step of it with helpful advice and insight. I have and will continue to highly recommend Carl and his team to anyone looking to buy or sell a home! Thank you again Carl and Realty Executives for getting us into our FIRST HOME!!",
-    name: "Michelle & Kevin",
+    name: "Michelle  ",
     rating: 5,
     date: "Aug 28, 2025",
   },
@@ -32,7 +32,7 @@ const testimonials = [
   {
     quote:
       "Michelle, as we settle into our new home, we wanted to take a minute to thank you for assisting us in fulfilling our dream. It was a pleasure to work with someone who listened to what we wanted in a house and not what they thought we should have. It was equally reassuring to have your experience on our side at closing when the sellers changed their minds once or twice. You made it happen! Come the day another move is in our future, we look forward to working with you again. Thank you Michelle Villeneuve.",
-    name: "Eric & Nicole Dowling",
+    name: " Nicole Dowling",
     rating: 5,
     date: "Jun 08, 2025",
   },
@@ -64,28 +64,16 @@ export default function Testimonials() {
           <p className="text-xs uppercase tracking-[0.32em] text-slate-500">
             Reviews
           </p>
-          <div className="mt-4 flex items-center justify-center gap-5 text-slate-900">
-            <svg
-              className="h-8 w-8 text-slate-300"
-              viewBox="0 0 32 32"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path d="M9.4 4.8c-2.9 1.7-4.7 4.9-4.7 8.5 0 5.1 3.7 9.7 8.6 10.6-2.2-1.6-3.6-4.3-3.6-7.3 0-3.8 1.8-7.1 4.5-9.2-1.6-.4-3.4-.2-4.8.4z" />
-              <path d="M9.7 7.4c-1.5 1.4-2.4 3.4-2.4 5.6 0 3.1 1.8 5.9 4.6 7.1-1.1-1.3-1.7-3-1.7-4.8 0-2.7 1.2-5.1 3-6.7-1.2-.4-2.6-.3-3.5. -1.2z" />
-            </svg>
-            <span className="text-4xl font-semibold sm:text-5xl">4.98</span>
-            <svg
-              className="h-8 w-8 text-slate-300"
-              viewBox="0 0 32 32"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path d="M22.6 4.8c2.9 1.7 4.7 4.9 4.7 8.5 0 5.1-3.7 9.7-8.6 10.6 2.2-1.6 3.6-4.3 3.6-7.3 0-3.8-1.8-7.1-4.5-9.2 1.6-.4 3.4-.2 4.8.4z" />
-              <path d="M22.3 7.4c1.5 1.4 2.4 3.4 2.4 5.6 0 3.1-1.8 5.9-4.6 7.1 1.1-1.3 1.7-3 1.7-4.8 0-2.7-1.2-5.1-3-6.7 1.2-.4 2.6-.3 3.5. -1.2z" />
-            </svg>
+          <div className="mt-1 flex items-center justify-center">
+            <div className="isolate rounded bg-white px-3 py-2">
+              <img
+                src="/testimonial.png"
+                alt="4.98 rating"
+                className="h-16 w-auto mix-blend-darken contrast-125 brightness-95 sm:h-20"
+              />
+            </div>
           </div>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-1 text-lg text-slate-600">
             We&apos;re proud to guide moves that clients consistently love.
           </p>
         </div>
@@ -98,7 +86,7 @@ export default function Testimonials() {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-200 text-sm font-semibold text-slate-600">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-200 text-sm font-semibold text-slate-900">
                     {getInitials(item.name)}
                   </div>
                   <div>

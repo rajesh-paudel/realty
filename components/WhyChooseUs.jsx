@@ -1,100 +1,101 @@
-import { CalendarCheck2, Handshake, MapPin, Megaphone } from "lucide-react";
-
 const features = [
   {
-    title: "Local Expertise",
-    description:
-      "Neighborhood knowledge to price, negotiate, and close with confidence.",
-    icon: MapPin,
+    title: "Expertise and Experience",
+    description: "Local market insight from a proven, trusted team.",
   },
   {
-    title: "Strategic Marketing",
-    description:
-      "Professional visuals and targeted campaigns that reach the right buyers.",
-    icon: Megaphone,
+    title: "Best Price Guidance",
+    description: "Smart pricing strategies to maximize your outcome.",
   },
   {
-    title: "Full-Service Support",
-    description: "From prep to offers, we manage the details end-to-end.",
-    icon: Handshake,
+    title: "Flexible Options",
+    description: "Tailored plans that fit your timeline and goals.",
   },
   {
-    title: "Fast, Clear Timelines",
-    description:
-      "Quick scheduling and consistent updates so you always know next steps.",
-    icon: CalendarCheck2,
+    title: "24/7 Client Support",
+    description: "We stay responsive at every step of the process.",
+  },
+  {
+    title: "Safety and Security",
+    description: "Verified listings and careful, transparent guidance.",
+  },
+  {
+    title: "Dedicated Advisors",
+    description: "Personalized help from search to closing.",
   },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-20">
-      <div className="pointer-events-none absolute inset-0 opacity-40">
-        <div className="absolute left-1/2 top-8 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-slate-100/70 blur-[120px]" />
-        <div className="absolute left-1/2 top-24 h-[360px] w-[360px] -translate-x-1/2 rounded-full bg-rose-100/50 blur-[120px]" />
-      </div>
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center font-sans">
-          <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
-            Why choose{" "}
-            <span className="font-normal italic text-slate-700">us?</span>
+    <section className="bg-white py-20 sm:py-32 sm:pb-44">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl font-semibold text-slate-900 sm:text-5xl">
+            Why{" "}
+            <span className="font-semibold text-rose-500">
+              Realty Executives Sudbury
+            </span>
+            ?
           </h2>
-          <p className="mt-3 text-sm text-slate-600 sm:text-base">
-            From first tour to closing day, we keep your move simple, clear, and
-            well-supported.
+          <p className="mt-4 text-base text-slate-600 sm:text-lg">
+            Real estate expertise that makes buying, selling, and relocating
+            feel clear, confident, and supported.
           </p>
         </div>
 
-        <div className="mt-12 grid items-center gap-10 md:grid-cols-[1fr_auto_1fr]">
-          <div className="space-y-8">
-            {[features[0], features[2]].map((feature) => {
-              const Icon = feature.icon;
-              return (
-                <div key={feature.title} className="text-center">
-                  <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-rose-50 text-rose-600">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
-                  </div>
-                  <h3 className="text-base font-semibold text-slate-900">
+        <div className="mt-16 grid gap-12 md:grid-cols-[1fr_auto_1fr] md:items-center">
+          <div className="space-y-12">
+            {[features[0], features[1], features[2]].map((feature, index) => (
+              <div
+                key={feature.title}
+                className={`text-right ${index % 2 === 0 ? "" : "mr-10 "}`}
+              >
+                <div className="flex items-center justify-end gap-2">
+                  <h3 className="text-xl font-semibold text-slate-900">
                     {feature.title}
                   </h3>
-                  <p className="mt-2 text-sm text-slate-600">
-                    {feature.description}
-                  </p>
+                  <span
+                    className={`h-3 w-3 rounded-full ${
+                      index % 2 === 0 ? "bg-rose-500" : "bg-blue-500 "
+                    }`}
+                  />
                 </div>
-              );
-            })}
+                <p className="mt-1 text-base text-slate-600 ">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
           </div>
 
-          <div className="flex flex-col items-center">
-            <div className="relative">
-              <img
-                src="/hero.png"
-                alt="Realty Executives listing"
-                className="relative h-64 w-64 rounded-2xl object-cover sm:h-72 sm:w-72"
-              />
-            </div>
-            <button className="mt-16 rounded-lg bg-rose-500 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-rose-600 cursor-pointer">
-              Get a FREE consult
-            </button>
+          <div className="flex justify-center">
+            <img
+              src="/whychooseus.png"
+              alt="Why choose us"
+              className="h-56 w-56 object-contain sm:h-96 sm:w-96"
+            />
           </div>
 
-          <div className="space-y-8">
-            {[features[1], features[3]].map((feature) => {
-              const Icon = feature.icon;
-              return (
-                <div key={feature.title} className="text-center">
-                  <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-rose-50 text-rose-600">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
-                  </div>
-                  <h3 className="text-base font-semibold text-slate-900">
+          <div className="space-y-12">
+            {[features[3], features[4], features[5]].map((feature, index) => (
+              <div
+                key={feature.title}
+                className={`text-left ${index % 2 === 0 ? "" : "ml-10 "}`}
+              >
+                <div className="flex items-center gap-4">
+                  <span
+                    className={`h-3 w-3 rounded-full ${
+                      index % 2 === 0 ? "bg-rose-500" : "bg-blue-500"
+                    }`}
+                  />
+                  <h3 className="text-xl font-semibold text-slate-900">
                     {feature.title}
                   </h3>
-                  <p className="mt-2 text-sm text-slate-600">
-                    {feature.description}
-                  </p>
                 </div>
-              );
-            })}
+                <p className="mt-1 text-base text-slate-600">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -58,7 +58,7 @@ const Slider = ({
     listingCount,
   );
   return (
-    <section id={sectionId} className={`bg-white w-full  mx-auto pb-4`}>
+    <section id={sectionId} className={`bg-white w-full  mx-auto pb-10`}>
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className=" flex flex-col gap-3 mb-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="text-xl font-serif text-slate-900 tracking-tight  sm:text-2xl md:text-3xl">
@@ -73,10 +73,10 @@ const Slider = ({
             onClick={() =>
               window.scrollTo({ top: 0, left: 0, behavior: "auto" })
             }
-            className="inline-flex items-center gap-2 self-start text-sm font-semibold text-rose-500 transition-colors  sm:self-auto sm:text-base whitespace-nowrap cursor-pointer"
+            className="inline-flex items-center gap-1 self-start text-sm font-semibold text-rose-500 transition-colors  sm:self-auto sm:text-base whitespace-nowrap cursor-pointer"
           >
             See all
-            <ArrowRight size={16} />
+            <ChevronRight size={16} />
           </Link>
         </div>
 

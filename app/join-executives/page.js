@@ -4,6 +4,8 @@ export const metadata = {
     "Grow your real estate career with mentorship, marketing tools, and leadership support at Realty Executives Sudbury.",
 };
 
+import ContactForm from "@/components/ContactForm";
+
 export default function JoinExecutivesPage() {
   return (
     <main className="min-h-screen bg-white">
@@ -116,87 +118,14 @@ export default function JoinExecutivesPage() {
           </div>
         </div>
 
-        <div className="mt-32 rounded-3xl border border-slate-200 bg-white p-6  sm:p-8">
-          <div className="mb-6 text-center">
-            <h2 className="text-2xl font-semibold text-slate-900">
-              Let&apos;s Talk About Your Next Move
-            </h2>
-            <p className="mt-2 text-sm text-slate-600">
-              Share a few details and our leadership team will reach out.
-            </p>
-          </div>
-
-          <form className="space-y-5">
-            <div className="grid gap-4 md:grid-cols-3">
-              <div className="flex flex-col gap-2">
-                <label
-                  className="text-sm font-medium text-slate-700"
-                  htmlFor="fullName"
-                >
-                  Full Name *
-                </label>
-                <input
-                  className="h-11 rounded-xl border border-slate-200 px-4 text-sm text-slate-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-                  id="fullName"
-                  name="fullName"
-                  placeholder="Jordan Smith"
-                  type="text"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label
-                  className="text-sm font-medium text-slate-700"
-                  htmlFor="email"
-                >
-                  Email *
-                </label>
-                <input
-                  className="h-11 rounded-xl border border-slate-200 px-4 text-sm text-slate-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-                  id="email"
-                  name="email"
-                  placeholder="you@email.com"
-                  type="email"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label
-                  className="text-sm font-medium text-slate-700"
-                  htmlFor="phone"
-                >
-                  Phone *
-                </label>
-                <input
-                  className="h-11 rounded-xl border border-slate-200 px-4 text-sm text-slate-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-                  id="phone"
-                  name="phone"
-                  placeholder="(705) 000-0000"
-                  type="tel"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <label
-                className="text-sm font-medium text-slate-700"
-                htmlFor="message"
-              >
-                Enter your questions or comments below
-              </label>
-              <textarea
-                className="min-h-[160px] rounded-xl border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-                id="message"
-                name="message"
-                placeholder="Tell us about your goals, experience, and what you need in a brokerage."
-              />
-            </div>
-            <div className="flex justify-center">
-              <button
-                className="inline-flex items-center justify-center rounded-full bg-rose-600 px-8 py-3 text-sm font-semibold text-white transition hover:bg-rose-700 cursor-pointer"
-                type="submit"
-              >
-                Submit
-              </button>
-            </div>
-          </form>
+        <div className="mt-32">
+          <ContactForm
+            compact
+            title="Join Realty Executives Sudbury"
+            description="Share a few details and our leadership team will reach out."
+            submitLabel="Submit"
+            borderless
+          />
         </div>
       </section>
     </main>
