@@ -76,6 +76,7 @@ export default async function Home() {
           title="Get in touch"
           submitLabel="Send request"
           borderless
+          formWidthClass="max-w-2xl"
         />
       </div>
     </main>

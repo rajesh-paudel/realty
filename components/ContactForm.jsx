@@ -6,6 +6,7 @@ export default function ContactForm({
   showHeader = true,
   showLogo = true,
   borderless = true,
+  formWidthClass = "max-w-4xl",
 }) {
   return (
     <section className="bg-white">
@@ -15,7 +16,7 @@ export default function ContactForm({
         }`}
       >
         <div
-          className={`mx-auto w-full max-w-4xl rounded-3xl bg-white p-3  sm:p-8 ${
+          className={`mx-auto w-full ${formWidthClass} rounded-3xl bg-white p-3  sm:p-8 ${
             borderless ? "" : "border border-slate-200"
           }`}
         >

@@ -150,7 +150,7 @@ export default function PropertyCard({ property }) {
       </div>
 
       {/* Content Section */}
-      <div className="pr-3.5 pt-2 pb-4 space-y-1">
+      <div className="px-2 pt-2 pb-4 space-y-1">
         <div>
           <h3 className="text-xl sm:text-2xl font-bold text-blue-900">
             {formattedPrice}
