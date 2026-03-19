@@ -2,7 +2,7 @@ const features = [
   {
     title: "Expertise and Experience",
     description: "Local market insight from a proven, trusted team.",
-    dotColor: "bg-yellow-400",
+    dotColor: "bg-blue-500",
   },
   {
     title: "Best Price Guidance", // Middle Item Left
@@ -12,12 +12,12 @@ const features = [
   {
     title: "Flexible Options",
     description: "Tailored plans that fit your timeline and goals.",
-    dotColor: "bg-yellow-400",
+    dotColor: "bg-blue-500",
   },
   {
     title: "24/7 Client Support",
     description: "We stay responsive at every step of the process.",
-    dotColor: "bg-yellow-400",
+    dotColor: "bg-blue-500",
   },
   {
     title: "Safety and Security", // Middle Item Right
@@ -27,7 +27,7 @@ const features = [
   {
     title: "Dedicated Advisors",
     description: "Personalized help from search to closing.",
-    dotColor: "bg-yellow-400",
+    dotColor: "bg-blue-500",
   },
 ];
 
@@ -38,8 +38,8 @@ export default function WhyChooseUs() {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-[#333c4d]">
-            Why{" "}
-            <span className="text-[#f1c40f]">Realty Executives Sudbury</span>?
+            Why <span className="text-blue-700">Realty Executives Sudbury</span>
+            ?
           </h2>
           <p className="mt-3 text-gray-500 font-light max-w-2xl mx-auto">
             Real estate expertise that makes buying, selling, and relocating
@@ -55,7 +55,7 @@ export default function WhyChooseUs() {
               <div
                 key={idx}
                 className={`text-right transition-all duration-300 
-                  ${idx === 1 ? "md:mr-12" : ""}`} // Pushes the middle item inward toward the car
+                  ${idx === 1 ? "md:mr-12" : ""}`}
               >
                 <div className="flex items-center justify-end gap-3 mb-1">
                   <h3 className="text-lg font-bold text-[#333c4d]">
@@ -87,7 +87,7 @@ export default function WhyChooseUs() {
               <div
                 key={idx}
                 className={`text-left transition-all duration-300
-                  ${idx === 1 ? "md:ml-12" : ""}`} // Pushes the middle item inward toward the car
+                  ${idx === 1 ? "md:ml-12" : ""}`}
               >
                 <div className="flex items-center justify-start gap-3 mb-1">
                   <span
