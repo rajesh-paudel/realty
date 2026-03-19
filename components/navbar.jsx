@@ -8,9 +8,13 @@ import { useState } from "react";
 export default function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isPropertiesOpen, setIsPropertiesOpen] = useState(false);
+  const [isMobilePropertiesOpen, setIsMobilePropertiesOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const closeMobileMenu = () => setIsMobileOpen(false);
+  const closeMobileMenu = () => {
+    setIsMobileOpen(false);
+    setIsMobilePropertiesOpen(false);
+  };
   const closePropertiesMenu = () => setIsPropertiesOpen(false);
 
   return (
@@ -182,38 +186,48 @@ export default function Navbar() {
             Home
           </Link>
           <div>
-            <Link
+            <button
               className="inline-flex items-center gap-2 hover:text-blue-600"
-              href="#properties"
-              onClick={closeMobileMenu}
+              type="button"
+              aria-expanded={isMobilePropertiesOpen}
+              onClick={() =>
+                setIsMobilePropertiesOpen((current) => !current)
+              }
             >
               Real Estate Properties
-              <ChevronDown className="h-4 w-4" aria-hidden="true" />
-            </Link>
-            <div className="mt-3 flex flex-col gap-2 pl-3 text-sm font-medium text-gray-600">
-              <Link
-                className="hover:text-blue-600"
-                href="/listings-in-sudbury"
-                onClick={closeMobileMenu}
-              >
-                View Sudbury Listings
-              </Link>
-              <Link
-                className="hover:text-blue-600"
-                href="/listings-in-sudbury?homeType=Office&listingType=lease"
-                onClick={closeMobileMenu}
-              >
-                Office Properties
-              </Link>
+              <ChevronDown
+                className={`h-4 w-4 transition-transform ${
+                  isMobilePropertiesOpen ? "rotate-180" : "rotate-0"
+                }`}
+                aria-hidden="true"
+              />
+            </button>
+            {isMobilePropertiesOpen && (
+              <div className="mt-3 flex flex-col gap-2 pl-3 text-sm font-medium text-gray-600">
+                <Link
+                  className="hover:text-blue-600"
+                  href="/listings-in-sudbury"
+                  onClick={closeMobileMenu}
+                >
+                  View Sudbury Listings
+                </Link>
+                <Link
+                  className="hover:text-blue-600"
+                  href="/listings-in-sudbury?homeType=Office&listingType=lease"
+                  onClick={closeMobileMenu}
+                >
+                  Office Properties
+                </Link>
 
-              <Link
-                className="hover:text-blue-600"
-                href="#open-houses"
-                onClick={closeMobileMenu}
-              >
-                Open Houses
-              </Link>
-            </div>
+                <Link
+                  className="hover:text-blue-600"
+                  href="/listings-in-sudbury?homeType=Vacant Land"
+                  onClick={closeMobileMenu}
+                >
+                  Vacant Land
+                </Link>
+              </div>
+            )}
           </div>
           <Link
             className="hover:text-blue-600"

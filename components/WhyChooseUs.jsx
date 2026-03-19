@@ -77,7 +77,7 @@ export default function WhyChooseUs() {
             <img
               src="/whychooseus.png"
               alt="Realty Executives"
-              className="w-full max-w-[420px] h-auto object-contain"
+              className="w-full max-w-[320px] md:max-w-[380px] lg:max-w-[420px] h-auto object-contain"
             />
           </div>
 

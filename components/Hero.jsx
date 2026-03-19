@@ -50,21 +50,21 @@ export default function Hero() {
 
           <form
             onSubmit={handleSubmit}
-            className="mt-4 flex w-full items-center gap-3 rounded-full border border-blue-100 bg-white px-5 py-3 shadow-xl"
+            className="mt-4 flex w-full items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 shadow-xl sm:gap-3 sm:px-5 sm:py-3"
           >
-            <Search className="h-5 w-5 text-slate-500" />
+            <Search className="h-4 w-4 shrink-0 text-slate-500 sm:h-5 sm:w-5" />
 
             <input
               type="text"
               value={city}
               onChange={(e) => setCity(e.target.value)}
               placeholder="Search by MLS® Number or Address"
-              className="flex-1 bg-transparent text-base outline-none placeholder:text-slate-400"
+              className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-slate-400 sm:text-base"
             />
 
             <button
               type="submit"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-rose-500 text-white transition hover:bg-rose-700 cursor-pointer"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-rose-500 text-white transition hover:bg-rose-700 sm:h-10 sm:w-10 cursor-pointer"
             >
               <Search className="h-4 w-4" />
             </button>
